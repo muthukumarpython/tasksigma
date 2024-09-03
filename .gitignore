@@ -47,8 +47,8 @@ data/output/
 Thumbs.db
 
 # Configuration
-*.yaml
-*.yml
+# *.yaml
+# *.yml
 
 # Python coverage
 .coverage

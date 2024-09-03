@@ -1,0 +1,70 @@
+# General Configuration
+project_name: "TaskSigma"
+use_react: true         # Set to true if you want to use the ReAct agent
+use_camel: true         # Set to true if you want to use the CAMEL agent
+task_name: "example_task"  # Name of the task to be executed
+
+# ReAct Agent Configuration
+react:
+  api_key: "your_openai_api_key"
+  model: "gpt-4"
+  temperature: 0.7
+  max_tokens: 1500
+  agent_name: "ReActAgent"
+  environment:
+    type: "api"
+    endpoint: "https://example.com/api"
+    headers:
+      Authorization: "Bearer your_api_token"
+
+# CAMEL Agent Configuration
+camel:
+  api_key: "your_openai_api_key"
+  model: "gpt-4"
+  temperature: 0.7
+  max_tokens: 1500
+  agent_name: "CAMELAgent"
+  role_play:
+    user_role: "Stock Trader"
+    assistant_role: "Python Programmer"
+    inception_prompt:
+      task: "Develop a trading bot with sentiment analysis"
+      word_limit: 100
+  communication_protocol:
+    message_format: "Instruction: <YOUR_INSTRUCTION>\nInput: <YOUR_INPUT>"
+    response_format: "Solution: <YOUR_SOLUTION>\nNext request."
+  termination_conditions:
+    max_rounds: 20
+    success_token: "<CAMEL_TASK_DONE>"
+
+# Task Manager Configuration
+tasks:
+  example_task:
+    description: "A sample task to demonstrate ReAct and CAMEL agents"
+    steps:
+      - "initialize_environment"
+      - "run_react_agent"
+      - "run_camel_agent"
+      - "aggregate_results"
+    output_dir: "src/data/output/"
+    log_file: "src/data/output/example_task_log.txt"
+
+# Logging Configuration
+logging:
+  version: 1
+  formatters:
+    standard:
+      format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: standard
+      level: INFO
+    file:
+      class: logging.FileHandler
+      formatter: standard
+      level: DEBUG
+      filename: "src/data/output/logs.txt"
+  root:
+    handlers: [console, file]
+    level: DEBUG
