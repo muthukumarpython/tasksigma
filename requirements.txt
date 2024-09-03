@@ -1,0 +1,21 @@
+# Core dependencies
+openai==0.27.0
+langchain==0.0.156
+pandas==1.5.3
+numpy==1.23.5
+PyYAML==6.0
+
+# Optional dependencies for specific tasks
+tweepy==4.12.1   # Required if working with Twitter API
+yfinance==0.2.12 # Required if working with Yahoo Finance API
+textblob==0.17.1 # Required for sentiment analysis
+
+# Utilities
+requests==2.28.1
+loguru==0.6.0    # For logging
+
+# Testing
+pytest==7.2.0
+
+# Additional libraries if needed
+matplotlib==3.7.1   # For plotting results, if needed

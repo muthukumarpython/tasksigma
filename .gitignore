@@ -1,0 +1,66 @@
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Distribution / packaging
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+*.egg-info/
+.installed.cfg
+*.egg-info/
+
+# Virtual environment
+venv/
+ENV/
+env/
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Data files
+data/input/
+data/output/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Configuration
+*.yaml
+*.yml
+
+# Python coverage
+.coverage
+coverage.xml
+*.cover
+nosetests.xml
+test_*.xml
+.cache
+
+# pytest
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
